@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VLM Live Mode</title>
+  <link rel="stylesheet" href="static/style.css?v=5">
+</head>
+<body>
+<main>
+  <header>
+    <div>
+      <h1>Live mode</h1>
+      <p class="sub">Qwen3.5 9B · 2× T4 · <a href="./">clip mode</a></p>
+    </div>
+    <span class="pill" id="status"><span class="dot"></span><span id="status-text">checking…</span></span>
+  </header>
+
+  <section class="card">
+    <h2>Camera</h2>
+    <video id="camera" muted playsinline autoplay></video>
+    <p class="muted" id="cam-info">Camera off.</p>
+    <p class="muted" id="counters"></p>
+    <label class="switch"><input type="checkbox" id="short" checked> Short answers (one sentence, faster)</label>
+    <p></p>
+    <div class="row">
+      <button class="btn" id="start">Start live</button>
+      <button class="btn secondary" id="stop" disabled>Stop</button>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>What the model sees (newest first)</h2>
+    <div id="feed"></div>
+  </section>
+</main>
+<script src="static/live.js?v=3"></script>
+</body>
+</html>
